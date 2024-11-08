@@ -37,8 +37,8 @@
 .home {
   text-align: center;
   padding: 2em;
-  background-color: #8131ff; /* Color de fondo */
-  color: white; /* Texto blanco para contraste */
+  background-color: #8131ff;
+  color: white;
 }
 
 .project-description {
@@ -61,7 +61,7 @@
 }
 
 .project-description a {
-  color: #fff; /* Enlaces blancos para mayor contraste */
+  color: #fff;
   text-decoration: none;
 }
 
@@ -70,8 +70,8 @@
 }
 
 .image-container img {
-  max-width: 100%; /* Ajusta la imagen al ancho máximo del contenedor */
-  height: auto;    /* Mantiene la relación de aspecto */
-  border-radius: 8px; /* Añade un borde redondeado a la imagen, si lo deseas */
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 </style>

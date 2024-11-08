@@ -11,34 +11,33 @@ describe('Calculadora.vue', () => {
         wrapper = mount(Calculator);
     });
 
-    it('debería mostrar correctamente los números en la pantalla', async () => {
-        // Interactúa con los botones para ingresar el número 12
+    it('hauria de mostrar correctament els números a la pantalla', async () => {
+        // Interactua amb els botons per ingressar el número 12
         await wrapper.findAll('button').at(1).trigger('click'); // botón 1
         await wrapper.findAll('button').at(2).trigger('click'); // botón 2
 
-        // Espera que el display sea '12'
-        await flushPromises();  // Asegura que todas las promesas y actualizaciones se resuelvan
+        // Espera que el display sigui '12'
+        await flushPromises();  // Assegura que totes les promeses i actualitzacions es resolguin
         expect(wrapper.text()).toContain('12');
     });
 
-    it('debería realizar una suma correctamente', async () => {
-        // Ingreso de 1 + 2
+    it('hauria de fer una suma correctament', async () => {
         await wrapper.findAll('button').at(1).trigger('click'); // botón 1
         await wrapper.findAll('button').at(11).trigger('click'); // botón +
         await wrapper.findAll('button').at(2).trigger('click'); // botón 2
         await wrapper.find('button:last-child').trigger('click'); // botón =
 
-        // Verifica que el resultado sea '3'
+        // Verifica que el resultat sigui '3'
         await flushPromises();
         expect(wrapper.text()).toContain('3');
     });
 
     it('debería manejar ceros iniciales correctamente', async () => {
-        // Ingreso de 01 (debería ser interpretado como 1)
+        //Ingrés de 01 (hauria de ser interpretat com a 1)
         await wrapper.findAll('button').at(9).trigger('click'); // botón 0
         await wrapper.findAll('button').at(1).trigger('click'); // botón 1
 
-        // Verifica que el display sea '1' (ignora el 0 inicial)
+        // Verifica que el display sigui '1' (ignora el 0 inicial)
         await flushPromises();
         expect(wrapper.text()).toContain('1');
     });
