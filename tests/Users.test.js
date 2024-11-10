@@ -8,14 +8,12 @@ vi.mock('axios');
 
 describe('axios', () => {
 
-    it('intenta fer una peticio amb dos elements amb el nom de raul i marcs', async () => {
-        // Mock de respuesta de axios
+    it('intenta fer una peticio amb dos elements amb el nom de raul i cognom patrascu', async () => {
         const mockUsers = [
             {
                 id: 1,
                 firstName: "raul",
                 lastName: "patrascu",
-
             },
         ];
 

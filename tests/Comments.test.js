@@ -7,30 +7,40 @@ global.fetch = vi.fn(() =>
     Promise.resolve({
         json: () => Promise.resolve([{
             id: 1,
-            name: 'Test Comment',
+            name: 'Comentari de Prova',
             email: 'test@example.com',
-            body: 'This is a comment'
+            body: 'Comentari de prova'
         }])
     })
 )
 
 describe('fetch', () => {
     it('fetches comments from API', async () => {
-        // Mount the component
+        // Munta el component
         const wrapper = mount(Comments)
 
-        // Wait for the next tick to ensure the component updates
+        // Espera al següent tic per assegurar-se que l'actualitzacio dels components
         await wrapper.vm.$nextTick()
-        await new Promise(resolve => setTimeout(resolve, 100)) // Wait a bit more for fetch to complete
+        await new Promise(resolve => setTimeout(resolve, 100)) // Espera a que el fetch es completi
 
-        // Verify that comments are loaded and there is at least one comment
+        // Comprova que els comentaris estiguin carregats i que hi ha almenys un comentari
         expect(wrapper.vm.comments.length).toBeGreaterThan(0)
 
-        // Verify the content of the comment
+        // Verifica el contingut del comentari
         const commentItem = wrapper.find('li')
-        expect(commentItem.text()).toContain('Test Comment')
+        expect(commentItem.text()).toContain('Comentari de Prova')
         expect(commentItem.text()).toContain('test@example.com')
-        expect(commentItem.text()).toContain('This is a comment')
+        expect(commentItem.text()).toContain('Comentari de prova')
     })
 })
+
+
+
+
+
+
+
+
+
+
 

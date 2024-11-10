@@ -22,7 +22,7 @@ onMounted(async () => {
     const response = await axios.get('https://dummyjson.com/users')
     users.value = response.data.users
   } catch (error) {
-    console.error("Error al cargar los usuarios:", error)
+    console.error("Error al carregar els usuaris:", error)
   }
 })
 </script>

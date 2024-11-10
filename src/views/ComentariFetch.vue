@@ -22,7 +22,7 @@ onMounted(async () => {
     const data = await response.json()
     comments.value = data
   } catch (error) {
-    console.error("Error al cargar los comentarios:", error)
+    console.error("Error al carregar comentaris:", error)
   }
 })
 </script>
